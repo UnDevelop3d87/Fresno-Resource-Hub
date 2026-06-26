@@ -21,5 +21,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Node Version Helper Packages
-289f5f7b563280838a3a0cae9609f7c0e3e45d7d        uses shortcuts.
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
